@@ -1,7 +1,7 @@
 # PR Response Doc — CineLog Watchlist Feature
 
 ## AI Usage
-<!-- Fill in at the end — how you used AI tools during this project -->
+I used Claude to understand the architecture of this project and check my implementations for comments 1 to 3. For comment 4 (Default Visibility), I used Claude to help me think through the benefits and tradeoffs for either side. I also asked Claude questions about Git in general, including how to navigate the vim interface for `git rebase`.
 
 ## Comment 1 — Rename
 **What I did:** I renamed all instances of `save_to_watchlist()` to `add_to_watchlist()`.
@@ -35,5 +35,15 @@
 ![Commit history](commit_screenshot.png)
 
 ## PR Description
-<!-- Written at the end — feature overview, design decisions, manual testing steps -->
 
+This PR adds a watchlist feature to CineLog, letting users track films they want to watch (as opposed to the existing collection feature, which tracks films they've already watched).
+
+### Decisions from review
+
+**Comment 4 — Default visibility:** Watchlists default to `public=True`, aligning with CineLog's context as a community app. 
+
+**Comment 5 — Sort order:** Watchlist entries are sorted alphabetically by film title, which makes it easier to find a film.
+
+### Testing
+
+Run `pytest tests/ -v`
